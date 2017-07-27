@@ -1,0 +1,3 @@
+library(devtools)
+
+setup("pkg")
