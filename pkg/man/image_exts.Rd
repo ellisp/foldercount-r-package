@@ -3,17 +3,12 @@
 \docType{data}
 \name{image_exts}
 \alias{image_exts}
-\alias{image_exts}
 \title{Vector of common image file extensions}
-\format{An object of class \code{character} of length 3.}
+\format{An object of class \code{character} of length 6.}
 \usage{
-image_exts
-
 image_exts
 }
 \description{
 Vector of common image file extensions
-
-Vector of executable file extensions
 }
 \keyword{datasets}
