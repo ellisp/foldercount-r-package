@@ -28,6 +28,9 @@ foldernames <- c("social_housing-master", "../forecastHybrid", "../ggseas")
 folder_file_counts(foldernames, binary_exts)
 folder_file_counts(foldernames, text_exts)
 
+folder_file_counts(foldernames, "r")
+folder_line_counts(foldernames, "csv")
+folder_line_counts(foldernames, "csv", onlyknown = FALSE) # need to coerce it to look at CSVs as they're not in its whitelist
 
 flc <- folder_line_counts(foldernames, text_exts)
 
@@ -42,11 +45,10 @@ flc %>%
             SD = sd(lines))
 }
 
-summary.flc(flc)
 
 flc %>%
   ggplot(aes(x = label, weight = lines, fill = ext)) +
   geom_bar(position = "dodge")
 
-View(x)
+
 

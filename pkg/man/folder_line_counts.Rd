@@ -4,7 +4,7 @@
 \alias{folder_line_counts}
 \title{Line counts in multiple folders}
 \usage{
-folder_line_counts(foldernames, exts = text_exts)
+folder_line_counts(foldernames, exts = text_exts, onlyknown = TRUE)
 }
 \arguments{
 \item{foldernames}{a vector of paths to folders to search (with their subdirectories) for files}
@@ -13,4 +13,8 @@ folder_line_counts(foldernames, exts = text_exts)
 }
 \description{
 Count the lines in all the files of given extensions, in each of a collection of folder systems
+}
+\examples{
+foldernames <- c("social_housing-master", "../forecastHybrid", "../ggseas")
+folder_line_counts(foldernames)
 }

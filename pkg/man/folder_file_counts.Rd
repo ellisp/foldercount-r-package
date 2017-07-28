@@ -14,3 +14,7 @@ folder_file_counts(foldernames, exts)
 \description{
 Count all the files of given extension, in each of a collection of folder systems
 }
+\examples{
+foldernames <- c("social_housing-master", "../forecastHybrid", "../ggseas")
+folder_file_counts(foldernames, c("r", "sql", "exe", "pdf"))
+}
