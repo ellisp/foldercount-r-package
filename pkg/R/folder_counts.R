@@ -30,6 +30,8 @@ folder_file_counts <- function(foldernames, exts){
 #' @export
 #' @param foldernames a vector of paths to folders to search (with their subdirectories) for files
 #' @param exts a vector of file extensions eg c("r", "sas", "sql") to find and count in each folder system
+#' @param onlyknown should this only work if the program recognises exts as being text file extensions?  Set 
+#' FALSE to override (needed if exts includes "csv" for example)
 #' @examples
 #' foldernames <- c("social_housing-master", "../forecastHybrid", "../ggseas")
 #' folder_line_counts(foldernames)

@@ -10,6 +10,9 @@ folder_line_counts(foldernames, exts = text_exts, onlyknown = TRUE)
 \item{foldernames}{a vector of paths to folders to search (with their subdirectories) for files}
 
 \item{exts}{a vector of file extensions eg c("r", "sas", "sql") to find and count in each folder system}
+
+\item{onlyknown}{should this only work if the program recognises exts as being text file extensions?  Set 
+FALSE to override (needed if exts includes "csv" for example)}
 }
 \description{
 Count the lines in all the files of given extensions, in each of a collection of folder systems

@@ -1,0 +1,6 @@
+par(bg ="grey80")
+words1 <- folder_wordcloud("social_housing-master", colors = viridis(10, direction = -1), min.freq = 15)
+words2 <- folder_wordcloud("../ggseas", colors = viridis(10, direction = -1), min.freq = 15)
+words3 <- folder_wordcloud("../forecastHybrid", colors = viridis(10, direction = -1), min.freq = 15)
+words4 <- folder_wordcloud("../nzelect", colors = viridis(10, direction = -1), min.freq = 15)
+words5 <- folder_wordcloud("../mtagdp-nzae", colors = viridis(10, direction = -1), min.freq = 15)
