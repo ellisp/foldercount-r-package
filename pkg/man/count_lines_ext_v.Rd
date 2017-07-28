@@ -19,6 +19,6 @@ count_lines_ext_v(exts, filenames, label = NULL, onlyknown = TRUE)
 count the lines in all the files with a vector of given extensions
 }
 \examples{
-count_lines_ext_v(textfile_exts, lf)
+count_lines_ext_v(text_exts, lf)
 count_files_ext_v(binary_exts, lf)
 }

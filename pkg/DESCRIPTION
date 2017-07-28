@@ -2,7 +2,7 @@ Package: foldercount
 Title: Convenient Functions for Analysing Files in a Folder System
 Version: 0.0.1.9000
 Authors@R: person("Peter", "Ellis", email = "peter.ellis2013nz@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Some convenience functions for helping analyse the files in a folder system - counting the number of lines, number of files, and so forth.
 Depends: R (>= 3.3.0)
 License: GPL-3
 Encoding: UTF-8

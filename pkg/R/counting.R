@@ -1,13 +1,3 @@
-#' Vector of common text file extensions
-#' @export
-textfile_exts <- c("r", "sas", "do", "sql", "c", "txt", "md", "rmd", "csv", "rd", "html", "js", "py", "cpp")
-
-#' Vector of common binary file extensions (svg isn't really binary but for our purposes...)
-#' @export
-binary_exts <- c("doc", "docx", "ppt", "pptx", "xls", "xlsx", "xlsc", "xlsm", 
-                 "rda", "rdata", "sas7bdat", "dta", "jar",
-                 "png", "jpg", "jpeg", "gif", "svg", "pdf")
-
 #' Count files
 #' 
 #' count the files, given a vector of extensions
@@ -19,7 +9,7 @@ binary_exts <- c("doc", "docx", "ppt", "pptx", "xls", "xlsx", "xlsc", "xlsm",
 #' @examples
 #' lf <- list.files(recursive = TRUE, full.names = TRUE)
 #' count_files_ext_v(binary_exts, lf)
-#' count_files_ext_v(textfile_exts, lf)
+#' count_files_ext_v(text_exts, lf)
 count_files_ext_v <- function(exts, filenames, label = NULL){
   tmp <- sapply(exts, function(ext){
     sum(grepl(paste0("\\." , ext, "$"), filenames))
@@ -65,11 +55,11 @@ count_lines_ext <- function(ext, filenames){
 #' @param onlyknown should the program only proceed if it recognises all the extensions as text files?
 #' @param label a potential extra column to add, handy if using this function on many different folder systems
 #' @examples
-#' count_lines_ext_v(textfile_exts, lf)
+#' count_lines_ext_v(text_exts, lf)
 #' count_files_ext_v(binary_exts, lf)
 count_lines_ext_v <- function(exts, filenames, label = NULL, onlyknown = TRUE){
-  if(onlyknown & sum(exts %in% textfile_exts) != length(exts)){
-    message(paste(exts[!exts %in% textfile_exts], collapse = " "))
+  if(onlyknown & sum(exts %in% text_exts) != length(exts)){
+    message(paste(exts[!exts %in% text_exts], collapse = " "))
     stop("Some of those file extensions don't look like text files to me...")
   }
   output <- NULL

@@ -19,5 +19,5 @@ count the files, given a vector of extensions
 \examples{
 lf <- list.files(recursive = TRUE, full.names = TRUE)
 count_files_ext_v(binary_exts, lf)
-count_files_ext_v(textfile_exts, lf)
+count_files_ext_v(text_exts, lf)
 }

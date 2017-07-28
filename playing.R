@@ -20,3 +20,9 @@ tmp %>%
             median = median(lines),
             mean = mean(lines),
             longest = max(lines))
+
+
+systems <- c("social_housing-master", "../forecastHybrid")
+
+the_system <- system[i]
+count_files_ext_v(text_exts, the_system)
