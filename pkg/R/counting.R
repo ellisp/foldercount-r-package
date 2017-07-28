@@ -1,19 +1,11 @@
-path <- "social_housing-master"
-
-lf <- tolower(list.files("social_housing-master", all.files = TRUE, recursive = TRUE, full.names = TRUE))
-lf <- tolower(list.files("../../blog/ellisp.github.io", all.files = TRUE, recursive = TRUE, full.names = TRUE))
-
-
-# number of R files
-
 #' Vector of common text file extensions
 #' @export
-textfile_exts <- c("r", "sas", "do", "sql", "c", "txt", "md", "rmd", "csv")
+textfile_exts <- c("r", "sas", "do", "sql", "c", "txt", "md", "rmd", "csv", "rd", "html", "js", "py", "cpp")
 
 #' Vector of common binary file extensions (svg isn't really binary but for our purposes...)
 #' @export
 binary_exts <- c("doc", "docx", "ppt", "pptx", "xls", "xlsx", "xlsc", "xlsm", 
-                 "rda", "rdata", "sas7bdat", "dta",
+                 "rda", "rdata", "sas7bdat", "dta", "jar",
                  "png", "jpg", "jpeg", "gif", "svg", "pdf")
 
 #' Count files
@@ -35,6 +27,8 @@ count_files_ext_v <- function(exts, filenames){
 
 
 #' count the lines in a single file
+#' 
+#' @export
 #' @param fname full path file name
 count_lines <- function(fname){
   length(readLines(fname)) 
@@ -42,6 +36,8 @@ count_lines <- function(fname){
 
 
 #' count the lines in all the files with a given extension
+#' 
+#' @export
 #' @param ext a file extension eg "txt".  Should be for text files of some sort
 #' @param filenames vector of files to search for files with the extension
 #' @examples
@@ -58,6 +54,7 @@ count_lines_ext <- function(ext, filenames){
 
 #' count the lines in all the files with a vector of given extensions
 #' 
+#' @export
 #' @param exts a vector of file extensions eg c("txt", "r", "sas", "c")
 #' @param filenames a vector of full path file names to search for files of those extensions
 #' @param onlyknown should the program only proceed if it recognises all the extensions as text files?
@@ -87,5 +84,3 @@ count_lines_ext_v <- function(exts, filenames, onlyknown = TRUE){
 
 
 
-# shoudl be an error
-count_lines_ext_v(binary_exts, lf)

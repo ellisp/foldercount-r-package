@@ -1,3 +1,4 @@
 library(devtools)
 
-setup("pkg")
+document("pkg")
+build("pkg")
