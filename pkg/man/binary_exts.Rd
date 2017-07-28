@@ -4,7 +4,7 @@
 \name{binary_exts}
 \alias{binary_exts}
 \title{Vector of common binary file extensions (svg isn't really binary but for our purposes...)}
-\format{An object of class \code{character} of length 18.}
+\format{An object of class \code{character} of length 19.}
 \usage{
 binary_exts
 }

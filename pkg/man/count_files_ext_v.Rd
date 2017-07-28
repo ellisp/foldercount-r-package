@@ -4,12 +4,14 @@
 \alias{count_files_ext_v}
 \title{Count files}
 \usage{
-count_files_ext_v(exts, filenames)
+count_files_ext_v(exts, filenames, label = NULL)
 }
 \arguments{
 \item{exts}{vector of file extensions eg c("doc", "docx", "ppt")}
 
 \item{filenames}{vector of full path filenames to search}
+
+\item{label}{a potential extra element to add, handy if using this function on many different folder systems}
 }
 \description{
 count the files, given a vector of extensions

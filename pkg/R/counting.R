@@ -15,14 +15,19 @@ binary_exts <- c("doc", "docx", "ppt", "pptx", "xls", "xlsx", "xlsc", "xlsm",
 #' @export
 #' @param exts vector of file extensions eg c("doc", "docx", "ppt")
 #' @param filenames vector of full path filenames to search
+#' @param label a potential extra element to add, handy if using this function on many different folder systems
 #' @examples
 #' lf <- list.files(recursive = TRUE, full.names = TRUE)
 #' count_files_ext_v(binary_exts, lf)
 #' count_files_ext_v(textfile_exts, lf)
-count_files_ext_v <- function(exts, filenames){
-  sapply(exts, function(ext){
+count_files_ext_v <- function(exts, filenames, label = NULL){
+  tmp <- sapply(exts, function(ext){
     sum(grepl(paste0("\\." , ext, "$"), filenames))
   })
+  if(!is.null(label)){
+    tmp <- c(tmp, label = label)
+  }
+  return(tmp)
 }
 
 
@@ -58,10 +63,11 @@ count_lines_ext <- function(ext, filenames){
 #' @param exts a vector of file extensions eg c("txt", "r", "sas", "c")
 #' @param filenames a vector of full path file names to search for files of those extensions
 #' @param onlyknown should the program only proceed if it recognises all the extensions as text files?
+#' @param label a potential extra column to add, handy if using this function on many different folder systems
 #' @examples
 #' count_lines_ext_v(textfile_exts, lf)
 #' count_files_ext_v(binary_exts, lf)
-count_lines_ext_v <- function(exts, filenames, onlyknown = TRUE){
+count_lines_ext_v <- function(exts, filenames, label = NULL, onlyknown = TRUE){
   if(onlyknown & sum(exts %in% textfile_exts) != length(exts)){
     message(paste(exts[!exts %in% textfile_exts], collapse = " "))
     stop("Some of those file extensions don't look like text files to me...")
@@ -77,6 +83,9 @@ count_lines_ext_v <- function(exts, filenames, onlyknown = TRUE){
         output <- rbind(output, tmp)
       }
     }
+  }
+  if(!is.null(output) & !is.null(label)){
+    output$label <- label
   }
   return(output)
 }

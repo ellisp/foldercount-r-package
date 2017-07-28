@@ -4,12 +4,14 @@
 \alias{count_lines_ext_v}
 \title{count the lines in all the files with a vector of given extensions}
 \usage{
-count_lines_ext_v(exts, filenames, onlyknown = TRUE)
+count_lines_ext_v(exts, filenames, label = NULL, onlyknown = TRUE)
 }
 \arguments{
 \item{exts}{a vector of file extensions eg c("txt", "r", "sas", "c")}
 
 \item{filenames}{a vector of full path file names to search for files of those extensions}
+
+\item{label}{a potential extra column to add, handy if using this function on many different folder systems}
 
 \item{onlyknown}{should the program only proceed if it recognises all the extensions as text files?}
 }
